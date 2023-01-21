@@ -1,5 +1,6 @@
 import React from "react";
-import { HeroTextSubTitle, HeroTextTitle, HeroTextWrapper } from "../Main.styled";
+import { HeroTextSubTitle, HeroTextTitle, HeroTextWrapper } from "./Hero.styled";
+
 
 const HeroText = () => (
     <HeroTextWrapper>

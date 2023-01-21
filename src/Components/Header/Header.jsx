@@ -11,11 +11,10 @@ const Header = () => (
             </LogoStyled>
             <ButtonsWrapper>
                 <Button text="Users"/>  
-                <Button text="Sign Up"/>  
+                <Button text="Sign up"/>  
             </ButtonsWrapper>
         </Navigation> 
     </header>
-  
 );
 
 export default Header;

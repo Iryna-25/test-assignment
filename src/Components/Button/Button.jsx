@@ -4,5 +4,4 @@ import { ButtonStyle } from "./Button.styled";
 const Button = ({ text}) => (
     <ButtonStyle> {text} </ButtonStyle>           
 );
-
 export default Button;

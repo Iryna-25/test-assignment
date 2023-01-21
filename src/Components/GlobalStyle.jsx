@@ -39,4 +39,31 @@ export const GlobalStyle = createGlobalStyle`
     img {
         display: block;
     }
+    section {
+        text-align: center;
+        justify-content: center;
+        padding: 140px 16px 0px 16px;
+        width: 360px;
+        margin: 0px auto;
+
+        &:last-child{
+            padding-bottom: 100px;
+        }
+        &:first-child{
+            padding: 0px;
+        }
+
+        @media screen and (min-width: 768px){
+            width: 768px;
+            padding: 140px 32px 0px 32px;
+        }
+        @media screen and (min-width: 1024px){
+            width: 1024px;
+            padding: 140px 60px 0px 60px;
+        }
+        @media screen and (min-width: 2560px){
+            width: 1170px;
+            padding: 140px 0px 0px 0px;
+        }
+    }
 `;

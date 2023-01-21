@@ -5,11 +5,10 @@ import Team from "./Team/Team";
 
 
 const Main = () => (
-    <div>
+    <main>
         <Hero/>
         <Team/>
         <Form/>
-    </div>
+    </main>
 );
-
 export default Main;

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getTeamMembers } from "../../../Services/API";
-// import Button from "../../Button/Button";
-import { TeamMembersList, TeamMembersSection } from "./Team.styled";
+import { ButtonShowMore, TeamMembersList } from "./Team.styled";
 import TeamMembersCard from "./TeamMembersCard";
 
 
@@ -28,19 +27,15 @@ const Team = () => {
     // console.log(members)
 
     return ( 
-        <TeamMembersSection>
+        <section>
             <h2>Working with GET request</h2>   
-            
                 <TeamMembersList>
                     {members.map((member) => (
                         <TeamMembersCard key={member.id} member={member}/>
                     ))}
                 </TeamMembersList>
-            
-            {/* <Button text="Show more" type="submit" onClick={showMore}> </Button> */}
-            <button type="submit" onClick={showMore} > sdghfjgkhlj;</button>
-        </TeamMembersSection>
+            <ButtonShowMore type="submit" onClick={showMore} > Show more</ButtonShowMore>
+        </section>
     )
 };
-
 export default Team;

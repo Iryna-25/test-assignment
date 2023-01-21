@@ -1,12 +1,15 @@
 import React from "react";
 import Button from "../../Button/Button";
-import { HeroWrapper } from "../Main.styled";
+import { HeroWrapper } from "./Hero.styled";
 import HeroText from "./HeroText";
 
+
 const Hero = () => (
-    <HeroWrapper>
-        <HeroText/> 
-        <Button text="Sign Up" />
-    </HeroWrapper>
+    <section>
+        <HeroWrapper>
+            <HeroText/> 
+            <Button text="Sign up" />
+        </HeroWrapper>
+    </section>
 );
 export default Hero;

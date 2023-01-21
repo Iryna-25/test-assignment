@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { getPositions } from "../../Services/API";
-import { InputStyle, FormWrapper, Hint, FormSection, Label, InputCheckbox, InputUpload } from "./Form.styled";
-
+import { InputStyle, FormWrapper, Hint, Label, InputCheckbox, InputUpload, ButtonSignUpForm } from "./Form.styled";
 
 
 const Form = () => {
@@ -36,61 +35,59 @@ const Form = () => {
     }
 
     return (
-        <FormSection>
+        <section>
             <h2>Working with POST request</h2>     
-            <form onSubmit={handleSubmit}>
-                <FormWrapper>
-                    <InputStyle                
-                        placeholder="Your name"
-                        type="text" 
-                        value={form.name} 
-                        name="name" 
-                        onChange={onHandleChange}
-                    />
+            <FormWrapper onSubmit={handleSubmit}>
 
-                    <InputStyle 
-                        placeholder="Email"
-                        type="email" 
-                        value={form.email} 
-                        name="email" 
-                        onChange={onHandleChange}
-                    />
+                <InputStyle                
+                    placeholder="Your name"
+                    type="text" 
+                    value={form.name} 
+                    name="name" 
+                    onChange={onHandleChange}
+                />
 
-                    <InputStyle 
-                        placeholder="Phone"
-                        type="tel" 
-                        value={form.phone} 
-                        name="phone" 
-                        onChange={onHandleChange}
-                    />
-                    
-                    <Hint>+38 (XXX) XXX - XX - XX</Hint>
+                <InputStyle 
+                    placeholder="Email"
+                    type="email" 
+                    value={form.email} 
+                    name="email" 
+                    onChange={onHandleChange}
+                />
 
-                    <h3>Select your position</h3>
+                <InputStyle 
+                    placeholder="Phone"
+                    type="tel" 
+                    value={form.phone} 
+                    name="phone" 
+                    onChange={onHandleChange}
+                />
+                
+                <Hint>+38 (XXX) XXX - XX - XX</Hint>
 
-                    {positions.map((position) => (
-                        <Label htmlFor="" key={position.id} >
-                            <InputCheckbox 
-                                onChange={onHandleChange} 
-                                type="radio" 
-                                value={position.id} 
-                                name="position"
-                            />
-                            {position.name}
-                        </Label>
-                    ))}
+                <h3>Select your position</h3>
 
-                    <InputUpload 
-                        onChange={onHandleChange} 
-                        type="file" 
-                        name="photo" 
-                    />
-
-                    <button type="submit"> Sign up </button>
-                </FormWrapper>
-            </form>
-        </FormSection>
+                {positions.map((position) => (
+                    <Label htmlFor="" key={position.id} >
+                        <InputCheckbox 
+                            onChange={onHandleChange} 
+                            type="radio" 
+                            value={position.id} 
+                            name="position"
+                        />
+                        {position.name}
+                    </Label>
+                ))}
+                
+                <InputUpload 
+                    onChange={onHandleChange} 
+                    type="file" 
+                    name="photo" 
+                />
+                
+                <ButtonSignUpForm type="submit"> Sign up </ButtonSignUpForm>
+            </FormWrapper>
+        </section>
     )
 };
-
 export default Form;
