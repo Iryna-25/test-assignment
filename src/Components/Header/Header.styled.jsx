@@ -16,7 +16,7 @@ export const Navigation = styled.nav `
 `
 
 export const LogoStyled = styled.div `
-  margin-right: 14px;
+  margin: auto 14px auto 0px;
   
   @media screen and (min-width: 768px){
     margin-right: 390px;

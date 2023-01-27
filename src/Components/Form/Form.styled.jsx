@@ -25,7 +25,7 @@ export const FormWrapper = styled.form `
   margin: 0 auto;
 `
 
-export const Hint = styled.p `
+export const Hint = styled.span `
   padding-top: 4px;
   padding-left: 16px;
   text-align: left;  
@@ -42,7 +42,7 @@ export const Label = styled.label `
   font-size: ${({theme}) => theme.fontSizes.m};
 `
 export const InputCheckbox = styled.input `
-  padding-right: 7px;
+  margin-right: 7px;
   text-align: left;  
   border: 1px solid;
   
@@ -57,6 +57,9 @@ export const InputUpload = styled.input `
   margin: 50px auto;
   border: 1px solid;
   border-radius: 4px;
+  &::placeholder {
+    
+  }
   
   color: ${({theme}) => theme.colors.inputBorderColor};
   border-color: ${({theme}) => theme.colors.inputBorderColor};
@@ -78,8 +81,18 @@ export const ButtonSignUpForm = styled.button `
   margin: 0px auto;
   border: none;
   border-radius: 80px;
+  cursor: pointer;
   
-  background-color: ${({theme}) => theme.colors.buttonHoverColor};
-  color: ${({theme}) => theme.colors.secondaryTextColor};
+  background-color: ${({theme}) => theme.colors.buttonNormalColor};
+  color: ${({theme}) => theme.colors.primaryTextColor};
   font-size: ${({theme}) => theme.fontSizes.m};
+
+  &:hover {
+    background-color: ${({theme}) => theme.colors.buttonHoverColor};
+  }
+
+  &:disabled{
+    background-color: ${({theme}) => theme.colors.buttonDisabledColor};
+    color: ${({theme}) => theme.colors.secondaryTextColor};
+  }
 `

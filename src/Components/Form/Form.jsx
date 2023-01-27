@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getPositions } from "../../Services/API";
 import { InputStyle, FormWrapper, Hint, Label, InputCheckbox, InputUpload, ButtonSignUpForm } from "./Form.styled";
-
+import { userSchema } from "../Validation/Validation";
 
 const Form = () => {
     const [positions, setPositions] = useState([]);
@@ -28,11 +28,18 @@ const Form = () => {
         })) 
     };
     
-    const handleSubmit = e => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(form)
-
-    }
+        const formData = {
+            name: e.target[0].value,
+            email: e.target[1].value,
+            phone: e.target[2].value
+        };
+        // console.log(form)
+        
+        const isValid = await userSchema.isValid(formData);
+        console.log(isValid)
+    };
 
     return (
         <section>
@@ -79,10 +86,11 @@ const Form = () => {
                     </Label>
                 ))}
                 
+                
                 <InputUpload 
                     onChange={onHandleChange} 
                     type="file" 
-                    name="photo" 
+                    name="photo"
                 />
                 
                 <ButtonSignUpForm type="submit"> Sign up </ButtonSignUpForm>

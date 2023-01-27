@@ -60,8 +60,18 @@ export const ButtonShowMore = styled.button `
   border-radius: 80px;
   border: none;
   margin-top: 50px;
+  cursor: pointer;
   
-  background-color: ${({theme}) => theme.colors.buttonActiveColor};
+  background-color: ${({theme}) => theme.colors.buttonNormalColor};
   color: ${({theme}) => theme.colors.primaryTextColor};
   font-size: ${({theme}) => theme.fontSizes.m};
+
+  &:hover {
+    background-color: ${({theme}) => theme.colors.buttonHoverColor};
+  }
+
+  &:disabled{
+    background-color: ${({theme}) => theme.colors.buttonDisabledColor};
+    color: ${({theme}) => theme.colors.secondaryTextColor};
+  }
 `
